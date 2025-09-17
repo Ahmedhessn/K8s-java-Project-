@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: contapp
+  template:
+    metadata:
+      labels:
+        app: contapp
+    spec:
+      containers:
+        - name: contapp
+          image: myapp
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: app-storage
+              mountPath: /usr/local/tomcat/webapps
+      volumes:
+        - name: app-storage
+          persistentVolumeClaim:
+            claimName: app-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: contapp-service
+spec:
+  type: ClusterIP
+  selector:
+    app: contapp
+  ports:
+    - port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app-pvc
+spec:
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      storage: 1Gi
