@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: prod
+  labels:
+    app: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: myapp:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_HOST
+          value: "mysql"
+        - name: MEMCACHED_HOST
+          value: "memcached"
+        - name: RABBITMQ_HOST
+          value: "rabbitmq"
