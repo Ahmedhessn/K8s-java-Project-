@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
       - name: app
-        image: 
-        ports: 01061875164/tomcatapp-java:v2
+        image: 01061875164/tomcatapp-java:v2
+        ports: 
         - containerPort: 8080
         env:
         - name: DB_HOST
