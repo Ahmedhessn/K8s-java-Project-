@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 01061875164/nginxapp:v2
+        image: 01061875164/nginxapp:2
         ports:
         - containerPort: 80
         volumeMounts:
