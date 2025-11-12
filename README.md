@@ -1,7 +1,4 @@
-أكيد 👍
-إليك **README.md** بسيط وواضح يناسب الـ **Jenkins pipeline** والمشروع اللي بتشتغل عليه (Docker + Kubernetes + Jenkins):
 
----
 
 # 🧩 DevOps Project — Dockerized Microservices CI/CD Pipeline
 
@@ -113,6 +110,4 @@ After pipeline success:
 * Accessible via the LoadBalancer service
 
 ---
-
-هل تحب أضيف **صورة توضيحية (diagram)** للـ CI/CD flow (Jenkins → Docker → K8s) في الـ README؟
-هتخلي شكل المشروع احترافي جدًا.
+.
