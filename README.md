@@ -19,22 +19,16 @@ It builds, pushes, and deploys microservices automatically from source code to a
 * Jenkins clones the GitHub repository from:
 
   ```
-  https://github.com/abdelrahmanonline4/dockerized-microservices.git
-  ```
 
-### 🐳 2. **Build Docker Images**
+https://github.com/Ahmedhessn/K8s-java-Project-/edit/Update-K8s-Project
 
-* Builds two Docker images:
 
-  * **Application Image:** `3booda24/vprofileapp:latest`
-  * **Database Image:** `3booda24/vprofiledb:latest`
-
-### ☁️ 3. **Push to Docker Hub**
+### ☁️ 2. **Push to Docker Hub**
 
 * Jenkins logs into Docker Hub using saved credentials (`credentialsId: dockerhub`)
 * Pushes both images to Docker Hub repository
 
-### ☸️ 4. **Deploy to Kubernetes**
+### ☸️ 3. **Deploy to Kubernetes**
 
 * Jenkins applies the Kubernetes manifests to deploy the full application stack:
 
@@ -50,7 +44,7 @@ It builds, pushes, and deploys microservices automatically from source code to a
   kubectl apply -f vprodbdep.yml
   ```
 
-### ✅ 5. **Post Build**
+### ✅ 4. **Post Build**
 
 * On success: Jenkins prints
   `✅ Build and deployment completed successfully.`
@@ -97,8 +91,7 @@ It builds, pushes, and deploys microservices automatically from source code to a
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/abdelrahmanonline4/dockerized-microservices.git
-   ```
+https://github.com/Ahmedhessn/K8s-java-Project-/edit/Update-K8s-Project   ```
 2. Set up Jenkins pipeline using the `Jenkinsfile`
 3. Add Docker Hub credentials (`dockerhub`)
 4. Run the pipeline
